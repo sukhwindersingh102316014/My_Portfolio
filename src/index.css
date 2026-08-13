@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  background-color: #090c11;
+}
+
+body {
+  background-image: radial-gradient(circle at 12% 8%, rgba(79, 209, 197, 0.08), transparent 42%),
+    radial-gradient(circle at 88% 0%, rgba(242, 184, 75, 0.05), transparent 40%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: #4fd1c5;
+  color: #090c11;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #090c11;
+}
+::-webkit-scrollbar-thumb {
+  background: #212b38;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2b3a4a;
+}
+
+:focus-visible {
+  outline: 2px solid #4fd1c5;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Section eyebrow styled as an HTTP route — encodes the section's identity
+   the same way this dev documents his own APIs with Swagger. */
+.route-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: #4fd1c5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.route-label::before {
+  content: 'GET';
+  color: #5b6675;
+  font-weight: 600;
+  font-size: 0.68rem;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid #212b38;
+  border-radius: 4px;
+}
+
+.reveal {
+  opacity: 0;
+}
+.reveal.is-visible {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.card-surface {
+  background: linear-gradient(180deg, #121821 0%, #101620 100%);
+  border: 1px solid #212b38;
+}
