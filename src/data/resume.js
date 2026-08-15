@@ -99,20 +99,19 @@ export const skillGroups = [
 
 export const projects = [
   {
-    name: 'EventSphere',
-    tagline: 'Full-stack event management & ticket booking platform',
-    stack: ['Spring Boot', 'PostgreSQL', 'Spring Data JPA', 'React.js', 'Redis'],
+    name: 'CloudShare',
+    tagline: 'Full-stack microservices-based cloud storage platform',
+    stack: ['Spring Boot', 'Spring Cloud Gateway', 'PostgreSQL', 'Redis', 'Cloudinary', 'React.js'],
     bullets: [
-      'Built a full-stack event management and ticket booking platform enabling organizers to create and manage events while allowing users to browse and book tickets seamlessly.',
-      'Architected the backend system with secure JWT-based authentication and role-based access control for users and organizers.',
-      'Designed booking workflows, payment validation mechanisms, and email notification services.',
-      'Developed scalable REST APIs using DTO-based design and integrated Redis caching for performance optimization.',
-      'Collaborated on frontend integration to ensure smooth end-to-end functionality.',
+      'Developed a full-stack, microservices-based cloud storage platform with independent authentication and file management services.',
+      'Implemented secure API authentication and authorization using JWT and centralized routing via Spring Cloud Gateway.',
+      'Integrated Redis for caching and Cloudinary for scalable file storage, preserving folder hierarchy with fast search.',
+      'Documented REST APIs with Swagger and decomposed the monolith into modular microservices.',
     ],
     links: {
-      github: 'https://github.com/sukhwindersingh102316014/EventSphere',
-      live: null,
-      swagger: null,
+      github: "https://github.com/sukhwindersingh102316014/CLoudShare",
+      live: "https://cloudshare-cdn.vercel.app/",
+      swagger: "https://cloudshare-le1b.onrender.com/swagger-ui/index.html"
     },
   },
   {
@@ -149,20 +148,20 @@ export const projects = [
     },
   },
   {
-    name: 'KinConnect',
-    tagline: 'Real-time family location tracking system',
-    stack: ['Spring Boot', 'MongoDB', 'WebSocket API', 'React.js'],
+    name: 'EventSphere',
+    tagline: 'Full-stack event management & ticket booking platform',
+    stack: ['Spring Boot', 'PostgreSQL', 'Spring Data JPA', 'React.js', 'Redis'],
     bullets: [
-      'Designed a real-time location tracking system allowing users to create and manage multiple family groups.',
-      'Implemented secure authentication and role-based access control using JWT.',
-      'Enabled live location sharing with WebSocket-based real-time synchronization.',
-      'Built REST APIs for family and location management, incorporating geospatial queries in MongoDB.',
-      'Strengthened backend scalability and real-time system design through efficient architecture.',
+      'Built a full-stack event management and ticket booking platform enabling organizers to create and manage events while allowing users to browse and book tickets seamlessly.',
+      'Architected the backend system with secure JWT-based authentication and role-based access control for users and organizers.',
+      'Designed booking workflows, payment validation mechanisms, and email notification services.',
+      'Developed scalable REST APIs using DTO-based design and integrated Redis caching for performance optimization.',
+      'Collaborated on frontend integration to ensure smooth end-to-end functionality.',
     ],
     links: {
-      github: 'https://github.com/sukhwindersingh102316014/KinConnect',
-      live: null,
-      swagger: null,
+      github: 'https://github.com/sukhwindersingh102316014/EventSphere',
+      live: "https://fest-tracker-system.vercel.app/auth",
+      swagger: "https://festtrackersystem.onrender.com/swagger-ui/index.html#/"
     },
   },
 ]
