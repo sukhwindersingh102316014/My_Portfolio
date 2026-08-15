@@ -189,9 +189,9 @@ export const coding = {
     'Proficient in Binary Search, Two Pointers, Sliding Window, and Hashing techniques.',
   ],
   profiles: [
-    { label: 'LeetCode', url: 'https://leetcode.com/u/3E9LrlAgkf/' },
-    { label: 'GeeksforGeeks', url: 'https://www.geeksforgeeks.org/' },
-    { label: 'Code360', url: 'https://www.naukri.com/code360/' },
+    { label: 'LeetCode', url: 'https://leetcode.com/u/sukhwinder_singh_102316014/' },
+    { label: 'GeeksforGeeks', url: 'https://www.geeksforgeeks.org/profile/sukhwindersin38aj?tab=activity' },
+    { label: 'Code360', url: 'https://www.naukri.com/code360/profile/8d442ddc-3e10-4710-a69f-81cbc54ed6af' },
     { label: 'GitHub', url: 'https://github.com/sukhwindersingh102316014' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/sukhwinder-singh-98aa37316/' },
   ],
