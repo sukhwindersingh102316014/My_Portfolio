@@ -9,7 +9,7 @@ export const profile = {
   email: 'sukhwindersingh102316014@gmail.com',
   linkedin: 'https://www.linkedin.com/in/sukhwinder-singh-98aa37316/',
   github: 'https://github.com/sukhwindersingh102316014',
-  resumeFile: '/Sukhwinder_Singh_Resume.pdf',
+  resumeFile: '/sukhwinder_resume.pdf',
   summary:
     "CSE undergraduate at Thapar Institute of Engineering & Technology who builds full-stack platforms end to end — designing REST APIs in Spring Boot, modeling data in PostgreSQL and MongoDB, and shipping the React front ends that consume them. Comfortable owning a feature from JWT-secured endpoint to deployed UI.",
 }
