@@ -22,25 +22,34 @@ function initPreloader() {
   const preloader = document.getElementById('preloader');
   const bar = document.getElementById('preloader-bar-fill');
   const pct = document.getElementById('preloader-pct-text');
-  if (!preloader || !bar || !pct) return;
+  if (!preloader) return;
 
   let progress = 0;
   const startTime = performance.now();
-  const duration = 1200; // 1.2s preloader
+  const duration = 1000;
+
+  function finish() {
+    preloader.classList.add('is-done');
+    document.body.classList.add('page-ready');
+    setTimeout(() => {
+      preloader.style.display = 'none';
+      preloader.style.pointerEvents = 'none';
+    }, 400);
+  }
+
+  const fallback = setTimeout(finish, 2200);
 
   function step(now) {
     const elapsed = now - startTime;
     progress = Math.min(100, Math.floor((elapsed / duration) * 100));
-    bar.style.width = progress + '%';
-    pct.textContent = String(progress).padStart(2, '0') + '%';
+    if (bar) bar.style.width = progress + '%';
+    if (pct) pct.textContent = String(progress).padStart(2, '0') + '%';
 
     if (progress < 100) {
       requestAnimationFrame(step);
     } else {
-      setTimeout(() => {
-        preloader.classList.add('is-done');
-        document.body.classList.add('page-ready');
-      }, 200);
+      clearTimeout(fallback);
+      finish();
     }
   }
 
@@ -100,7 +109,6 @@ function initCustomCursor() {
   }
   requestAnimationFrame(renderRing);
 
-  // Interactive hover targets
   const hoverables = document.querySelectorAll('a, button, [data-cursor="true"], .project-card, .exp-row, .recog-feature');
   hoverables.forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
@@ -128,13 +136,12 @@ function initFibonacciSphere() {
   window.addEventListener('resize', resize);
   resize();
 
-  // Generate mathematical Fibonacci Sphere points
   const N = 380;
   const points = [];
-  const phi = Math.PI * (3 - Math.sqrt(5)); // Golden angle in radians
+  const phi = Math.PI * (3 - Math.sqrt(5));
 
   for (let i = 0; i < N; i++) {
-    const y = 1 - (i / (N - 1)) * 2; // y goes from 1 to -1
+    const y = 1 - (i / (N - 1)) * 2;
     const radiusAtY = Math.sqrt(1 - y * y);
     const theta = phi * i;
     const x = Math.cos(theta) * radiusAtY;
@@ -170,11 +177,9 @@ function initFibonacciSphere() {
   function render() {
     ctx.clearRect(0, 0, width, height);
 
-    // Responsive Sphere Radius based on container size
     baseSphereRadius = Math.min(width, height) * 0.38;
     if (baseSphereRadius < 140) baseSphereRadius = 140;
 
-    // Smooth rotational damping
     rotX += (targetRotX - rotX) * 0.05 + 0.0012 + mouseVelY;
     rotY += (targetRotY - rotY) * 0.05 + 0.0025 + mouseVelX;
     mouseVelX *= 0.94;
@@ -185,7 +190,6 @@ function initFibonacciSphere() {
     const cosY = Math.cos(rotY);
     const sinY = Math.sin(rotY);
 
-    // Center in right half on desktop or middle on mobile
     const isDesktop = width >= 900;
     const centerX = isDesktop ? width * 0.72 : width * 0.5;
     const centerY = height * 0.48;
@@ -195,15 +199,12 @@ function initFibonacciSphere() {
     for (let i = 0; i < N; i++) {
       const p = points[i];
 
-      // Rotate Y
       const x1 = p.originalX * cosY - p.originalZ * sinY;
       const z1 = p.originalZ * cosY + p.originalX * sinY;
 
-      // Rotate X
       const y2 = p.originalY * cosX - z1 * sinX;
       const z2 = z1 * cosX + p.originalY * sinX;
 
-      // Perspective projection
       const cameraDistance = 3.5;
       const fov = cameraDistance / (cameraDistance + z2);
       const projX = centerX + x1 * baseSphereRadius * fov;
@@ -218,14 +219,11 @@ function initFibonacciSphere() {
       });
     }
 
-    // Sort by depth for correct z-rendering
     projectedPoints.sort((a, b) => a.z - b.z);
 
-    // Draw connecting dynamic geometric lattice
     ctx.lineWidth = 0.6;
     for (let i = 0; i < projectedPoints.length; i += 3) {
       const p1 = projectedPoints[i];
-      // Connect to neighbor in Fibonacci spiral
       if (i + 1 < projectedPoints.length) {
         const p2 = projectedPoints[i + 1];
         const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
@@ -240,10 +238,9 @@ function initFibonacciSphere() {
       }
     }
 
-    // Draw individual nodes
     for (let i = 0; i < projectedPoints.length; i++) {
       const p = projectedPoints[i];
-      const normalizedZ = (p.z + 1) / 2; // 0 to 1
+      const normalizedZ = (p.z + 1) / 2;
       const size = Math.max(0.8, (0.8 + normalizedZ * 2.2) * p.scale);
 
       const isSignalNode = p.index % 17 === 0;
@@ -270,7 +267,7 @@ function initFibonacciSphere() {
 }
 
 /* --------------------------------------------------------------------------
-   05. Scroll Effects (Progress Bar, Scrub Copy & Reveals)
+   05. Scroll Effects
    -------------------------------------------------------------------------- */
 function initScrollEffects() {
   const progressBar = document.getElementById('header-progress-fill');
@@ -283,12 +280,10 @@ function initScrollEffects() {
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollFraction = docHeight > 0 ? scrollTop / docHeight : 0;
 
-    // Header progress bar
     if (progressBar) {
       progressBar.style.transform = `scaleX(${scrollFraction})`;
     }
 
-    // Scrub text highlight in About section
     if (scrubWords.length > 0) {
       const scrubContainer = document.querySelector('.scrub-copy');
       if (scrubContainer) {
@@ -309,7 +304,6 @@ function initScrollEffects() {
       }
     }
 
-    // Active Navigation Highlight
     const sections = document.querySelectorAll('section[id]');
     let currentSectionId = '';
     sections.forEach(sec => {
@@ -331,7 +325,6 @@ function initScrollEffects() {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Scroll Reveal with IntersectionObserver
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -408,9 +401,7 @@ function initCopyEmail() {
       try {
         await navigator.clipboard.writeText(emailText);
         copied = true;
-      } catch (err) {
-        // Fallback to execCommand
-      }
+      } catch (err) {}
     }
     if (!copied) {
       try {
@@ -428,16 +419,18 @@ function initCopyEmail() {
       }
     }
 
-    const original = label.textContent;
-    label.textContent = 'COPIED!';
-    copyBtn.style.borderColor = 'var(--signal)';
-    copyBtn.style.color = 'var(--signal-ink)';
+    if (label) {
+      const original = label.textContent;
+      label.textContent = 'COPIED!';
+      copyBtn.style.borderColor = 'var(--signal)';
+      copyBtn.style.color = 'var(--signal-ink)';
 
-    setTimeout(() => {
-      label.textContent = original;
-      copyBtn.style.borderColor = '';
-      copyBtn.style.color = '';
-    }, 2200);
+      setTimeout(() => {
+        label.textContent = original;
+        copyBtn.style.borderColor = '';
+        copyBtn.style.color = '';
+      }, 2200);
+    }
   });
 }
 
@@ -461,7 +454,6 @@ function initMobileMenu() {
 
   toggle.addEventListener('click', toggleMenu);
 
-  // Auto-close on link click
   const menuLinks = menu.querySelectorAll('a');
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
