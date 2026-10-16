@@ -3,7 +3,7 @@
  * Fibonacci 3D Canvas, Custom Cursor, Live Clock, Scroll Reveals, Audio & Effects
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   initPreloader();
   initISTClock();
   initCustomCursor();
@@ -13,7 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyEmail();
   initMobileMenu();
   initSpotlight();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 
 /* --------------------------------------------------------------------------
    01. Preloader Animation
