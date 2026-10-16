@@ -1,61 +1,973 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sukhwinder Singh — Backend-focused Full-Stack Developer</title>
-    <meta name="title" content="Sukhwinder Singh — Backend-focused Full-Stack Developer" />
-    <meta
-      name="description"
-      content="Portfolio of Sukhwinder Singh, a CSE undergraduate at Thapar Institute building full-stack platforms with Spring Boot, React, PostgreSQL and MongoDB. Explore EventSphere, CampusRide, SkillBridge and KinConnect."
-    />
-    <meta name="author" content="Sukhwinder Singh" />
-    <meta name="keywords" content="Sukhwinder Singh, Backend Developer, Full Stack Developer, Spring Boot, React Developer, Java Developer, Thapar Institute, Software Engineer Portfolio" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://sukhwindersingh.dev/" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#e9e6df" />
+  <meta name="color-scheme" content="light" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Sukhwinder Singh — Backend-focused Full-Stack Developer" />
-    <meta property="og:description" content="CSE undergraduate building full-stack platforms with Spring Boot, React, PostgreSQL and MongoDB." />
-    <meta property="og:image" content="/og-image.png" />
-    <meta property="og:url" content="https://sukhwindersingh.dev/" />
+  <title>Sukhwinder Singh — Software Engineer &amp; AI Systems</title>
+  <meta name="description" content="Portfolio of Sukhwinder Singh — Software Engineer specializing in resilient microservices, distributed architectures, PyTorch deep learning pipelines, and autonomous AI workflows." />
+  <meta name="keywords" content="Sukhwinder Singh, Software Engineer, Backend Developer, Java, Spring Boot, PyTorch, Deep Learning, Microservices, Thapar Institute, TIET" />
+  <meta name="author" content="Sukhwinder Singh" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sukhwinder Singh — Backend-focused Full-Stack Developer" />
-    <meta name="twitter:description" content="CSE undergraduate building full-stack platforms with Spring Boot, React, PostgreSQL and MongoDB." />
-    <meta name="twitter:image" content="/og-image.png" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sukhwinder Singh — Software Engineer &amp; AI Systems" />
+  <meta property="og:description" content="Computer Science undergraduate (8.41 CGPA) with internship experience building autonomous AI workflows and deep learning pipelines." />
+  <meta property="og:type" content="website" />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="theme-color" content="#090C11" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="site-body">
+  <!-- Skip to Content Accessibility -->
+  <a href="#main-content" class="sr-only">Skip to content</a>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Fullscreen Preloader -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <span class="preloader-corner tl">TIET / B.E. CSE '27</span>
+    <span class="preloader-corner tr">SS—26 // PORTFOLIO</span>
+    <span class="preloader-corner bl">SYSTEM READY</span>
+    <div class="preloader-name">Sukhwinder Singh</div>
+    <div class="preloader-bar">
+      <div id="preloader-bar-fill"></div>
+    </div>
+    <div id="preloader-pct-text" class="preloader-pct">00%</div>
+  </div>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Sukhwinder Singh",
-        "url": "https://sukhwindersingh.dev/",
-        "email": "sukhwindersingh102316014@gmail.com",
-        "sameAs": [
-          "https://www.linkedin.com/in/sukhwinder-singh-98aa37316/",
-          "https://github.com/sukhwindersingh102316014"
-        ],
-        "jobTitle": "Full-Stack Developer",
-        "alumniOf": "Thapar Institute of Engineering & Technology"
-      }
-      
-    </script>
-  </head>
-  <body class="bg-bg text-ink font-body antialiased">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- Background Textures -->
+  <div class="noise-layer" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <!-- Interactive 3D Canvas Background -->
+  <div class="particle-field" aria-hidden="true">
+    <canvas id="canvas-scene"></canvas>
+  </div>
+
+  <!-- Technical Figure HUD -->
+  <div class="figure-hud" aria-hidden="true">
+    <span>FIG.01</span>
+    <i></i>
+    <span>Fibonacci sphere point-lattice</span>
+  </div>
+
+  <!-- Fixed Site Header -->
+  <header class="site-header">
+    <div class="header-bar">
+      <a href="#top" class="brand" aria-label="Sukhwinder Singh — Back to top">
+        <span class="brand-mark">SS</span>
+        <span class="brand-name">Sukhwinder Singh</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Sections">
+        <a href="#about"><span>01</span>About</a>
+        <a href="#work"><span>02</span>Work</a>
+        <a href="#experience"><span>03</span>Experience</a>
+        <a href="#stack"><span>04</span>Stack</a>
+        <a href="#recognition"><span>05</span>Recognition</a>
+        <a href="#contact"><span>06</span>Contact</a>
+      </nav>
+
+      <div class="header-meta">
+        <time class="header-clock">--:--:-- <span>IST</span></time>
+        <a class="header-cta" href="mailto:sukhwindersingh102316014@gmail.com">
+          Let's talk 
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 7h10v10"></path>
+            <path d="M7 17 17 7"></path>
+          </svg>
+        </a>
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="header-progress" aria-hidden="true">
+      <div id="header-progress-fill"></div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <nav aria-label="Mobile Navigation">
+        <a href="#about"><span>01</span>About</a>
+        <a href="#work"><span>02</span>Work</a>
+        <a href="#experience"><span>03</span>Experience</a>
+        <a href="#stack"><span>04</span>Stack</a>
+        <a href="#recognition"><span>05</span>Recognition</a>
+        <a href="#contact"><span>06</span>Contact</a>
+      </nav>
+      <a class="mobile-menu-mail" href="mailto:sukhwindersingh102316014@gmail.com">
+        sukhwindersingh102316014@gmail.com
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 7h10v10"></path>
+          <path d="M7 17 17 7"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content Flow -->
+  <main id="main-content" class="site">
+    <!-- Hero Section -->
+    <section id="top" class="hero">
+      <div class="hero-grid frame">
+        <div class="hero-copy">
+          <p class="hero-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Available for SDE Roles
+            <span class="hero-status-sep" aria-hidden="true">/</span>
+            Software Engineer
+          </p>
+
+          <h1 class="hero-name">
+            <span class="line"><span>Sukhwinder</span></span>
+            <span class="line"><span>Singh<span class="accent">.</span></span></span>
+          </h1>
+
+          <p class="hero-lede">
+            I engineer high-throughput microservices and autonomous AI workflows with deep learning pipelines. 
+            <span>Proficient in Java, Spring Boot, PyTorch, and distributed architectures. 400+ algorithmic problems solved.</span>
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">
+              Selected work
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m7 7 10 10"></path>
+                <path d="M17 7v10H7"></path>
+              </svg>
+            </a>
+            <a class="btn btn-ghost" href="Sukhwinder_Singh_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              Résumé PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero 3D Stage with Floating Highlight Chips -->
+        <div class="hero-figure">
+          <span class="corner tl" aria-hidden="true"></span>
+          <span class="corner tr" aria-hidden="true"></span>
+          <span class="corner bl" aria-hidden="true"></span>
+          <span class="corner br" aria-hidden="true"></span>
+          <span class="crosshair" aria-hidden="true"></span>
+
+          <ul class="hero-chips" aria-label="Key Highlights">
+            <li class="hero-chip hero-chip-1 is-dark">
+              <span class="chip-label mono">Algorithmic Problem Solving</span>
+              <span class="chip-figure">400+</span>
+              <span class="chip-title">Problems Mastered</span>
+              <span class="chip-note">LeetCode &amp; GeeksforGeeks</span>
+            </li>
+            <li class="hero-chip hero-chip-2">
+              <span class="chip-label mono">Core Architecture</span>
+              <span class="chip-title">Software Engineer</span>
+              <span class="chip-note">Java · Spring Boot · Microservices</span>
+            </li>
+            <li class="hero-chip hero-chip-3">
+              <span class="chip-label mono">Deep Learning &amp; AI</span>
+              <span class="chip-title">Autonomous Workflows</span>
+              <span class="chip-note">PyTorch · Swin Transformers · HITL</span>
+            </li>
+            <li class="hero-chip hero-chip-4">
+              <span class="chip-label mono">Internships</span>
+              <span class="chip-title">ShipMyBuild &amp; Samsung</span>
+              <span class="chip-note">Agentic AI &amp; Video Anonymization</span>
+            </li>
+            <li class="hero-chip hero-chip-5">
+              <span class="chip-label mono">Academic Excellence</span>
+              <span class="chip-title">B.E. Computer Science</span>
+              <span class="chip-note">TIET Patiala · 8.41 CGPA (2023–2027)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hero Bottom Specifications -->
+      <dl class="hero-specs frame">
+        <div>
+          <dt>Based in</dt>
+          <dd>Punjab, India</dd>
+        </div>
+        <div>
+          <dt>Currently</dt>
+          <dd>Software Engineer Intern @ ShipMyBuild</dd>
+        </div>
+        <div>
+          <dt>Education</dt>
+          <dd>Thapar Institute of Eng. &amp; Tech (8.41 CGPA)</dd>
+        </div>
+        <div>
+          <dt>Primary Focus</dt>
+          <dd>Distributed Microservices &amp; PyTorch AI</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Infinite Marquee Ticker -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <div>
+          <span>Java<i>/</i></span>
+          <span>Spring Boot<i>/</i></span>
+          <span>Spring Cloud Gateway<i>/</i></span>
+          <span>PyTorch<i>/</i></span>
+          <span>Docker<i>/</i></span>
+          <span>Redis<i>/</i></span>
+          <span>PostgreSQL<i>/</i></span>
+          <span>Swin Transformer<i>/</i></span>
+          <span>React.js<i>/</i></span>
+          <span>Next.js<i>/</i></span>
+          <span>Hibernate<i>/</i></span>
+          <span>AWS (S3 &amp; EC2)<i>/</i></span>
+          <span>C++<i>/</i></span>
+          <span>Microservices<i>/</i></span>
+          <span>REST APIs<i>/</i></span>
+          <span>Linux/Bash<i>/</i></span>
+        </div>
+        <div>
+          <span>Java<i>/</i></span>
+          <span>Spring Boot<i>/</i></span>
+          <span>Spring Cloud Gateway<i>/</i></span>
+          <span>PyTorch<i>/</i></span>
+          <span>Docker<i>/</i></span>
+          <span>Redis<i>/</i></span>
+          <span>PostgreSQL<i>/</i></span>
+          <span>Swin Transformer<i>/</i></span>
+          <span>React.js<i>/</i></span>
+          <span>Next.js<i>/</i></span>
+          <span>Hibernate<i>/</i></span>
+          <span>AWS (S3 &amp; EC2)<i>/</i></span>
+          <span>C++<i>/</i></span>
+          <span>Microservices<i>/</i></span>
+          <span>REST APIs<i>/</i></span>
+          <span>Linux/Bash<i>/</i></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 01: About Me -->
+    <section id="about" class="section frame">
+      <div class="about-grid">
+        <div class="about-body">
+          <header class="section-head">
+            <div class="section-rule">
+              <span class="mono" data-scramble="true">[01] About Me</span>
+              <span class="mono rule-meta" aria-hidden="true">SS—26 / §01</span>
+            </div>
+            <div class="section-head-grid">
+              <div>
+                <h2 class="section-title" data-reveal="true">Architecting resilient backends &amp; autonomous intelligence.</h2>
+              </div>
+            </div>
+          </header>
+
+          <p class="scrub-copy">
+            <span class="w">I'm</span> <span class="w">a</span> <span class="w">software</span> <span class="w">engineer</span> <span class="w">and</span> <span class="w">computer</span> <span class="w">science</span> <span class="w">undergraduate</span> <span class="w">at</span> <span class="w">Thapar</span> <span class="w">Institute</span> <span class="w">of</span> <span class="w">Engineering</span> <span class="w">&amp;</span> <span class="w">Technology.</span> <span class="w">I</span> <span class="w">build</span> <span class="w">high-throughput,</span> <span class="w">fault-tolerant</span> <span class="w">backend</span> <span class="w">microservices</span> <span class="w">in</span> <span class="w">Java</span> <span class="w">and</span> <span class="w">Spring</span> <span class="w">Boot,</span> <span class="w">coupled</span> <span class="w">with</span> <span class="w">deep</span> <span class="w">learning</span> <span class="w">vision</span> <span class="w">pipelines</span> <span class="w">and</span> <span class="w">autonomous</span> <span class="w">agentic</span> <span class="w">workflows.</span> <span class="w">With</span> <span class="w">over</span> <span class="w">400+</span> <span class="w">algorithmic</span> <span class="w">problems</span> <span class="w">solved</span> <span class="w">across</span> <span class="w">LeetCode</span> <span class="w">and</span> <span class="w">GeeksforGeeks,</span> <span class="w">I</span> <span class="w">focus</span> <span class="w">on</span> <span class="w">concurrency,</span> <span class="w">system</span> <span class="w">resilience,</span> <span class="w">and</span> <span class="w">low-latency</span> <span class="w">execution.</span>
+          </p>
+
+          <div class="about-cols">
+            <p data-reveal="true">
+              I care about engineering backend systems that endure under real-world load. In my project work and internships, I've eliminated booking race conditions using PostgreSQL row-level locks, purged Hibernate N+1 query bottlenecks via DTO projections to sustain sub-120ms p95 latencies, and designed idempotent state gates that prevent autonomous AI agents from falling into feedback loops.
+            </p>
+            <p data-reveal="true">
+              Beyond distributed services, I actively research deep learning and computer vision architectures. At Samsung PRISM, I engineered real-time video face anonymization pipelines with synthetic facial embeddings. For event-camera depth estimation, I designed a hybrid CNN and windowed Swin Transformer yielding a +1.8 dB PSNR improvement while vectorizing PyTorch loaders to compress GPU footprints.
+            </p>
+          </div>
+
+          <div class="metrics">
+            <div class="metric" data-reveal="true">
+              <span class="metric-value">400+</span>
+              <span class="metric-label">Algorithmic Problems Solved</span>
+            </div>
+            <div class="metric" data-reveal="true">
+              <span class="metric-value">8.41</span>
+              <span class="metric-label">CGPA at TIET Patiala</span>
+            </div>
+            <div class="metric" data-reveal="true">
+              <span class="metric-value">45%</span>
+              <span class="metric-label">Query Latency Slashed</span>
+            </div>
+            <div class="metric" data-reveal="true">
+              <span class="metric-value">&lt;120ms</span>
+              <span class="metric-label">p95 Latency Maintained</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 02: Selected Work -->
+    <section id="work" class="section frame">
+      <header class="section-head">
+        <div class="section-rule">
+          <span class="mono" data-scramble="true">[02] Selected work</span>
+          <span class="mono rule-meta" aria-hidden="true">SS—26 / §02</span>
+        </div>
+        <div class="section-head-grid">
+          <div>
+            <h2 class="section-title" data-reveal="true">Selected <em>work</em></h2>
+            <p class="section-note" data-reveal="true">Projects are where architectural ideas become verifiable evidence.</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Flagship Project: CloudShare -->
+      <article class="flagship spot" data-reveal="true">
+        <div class="flagship-media">
+          <div class="browser-bar">
+            <i></i><i></i><i></i>
+            <span class="mono">cloudshare.internal/v1/storage</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 7h10v10"></path>
+              <path d="M7 17 17 7"></path>
+            </svg>
+          </div>
+          <div class="flagship-shot">
+            <img src="assets/cloudshare-preview.svg" alt="CloudShare Architecture &amp; System Dashboard" loading="lazy" />
+          </div>
+          <span class="flagship-caption mono">
+            <span>CloudShare Core · Spring Cloud Gateway Architecture</span>
+            <span>Microservices Cluster ↗</span>
+          </span>
+        </div>
+
+        <div class="flagship-body">
+          <div class="flagship-top mono">
+            <span class="tag tag-signal">Flagship Project</span>
+            <span class="live-tag"><span class="status-dot" aria-hidden="true"></span> Production Microservices</span>
+          </div>
+
+          <h3>CloudShare</h3>
+          <p class="flagship-tagline">Scalable Cloud Storage &amp; Streaming Microservices Platform</p>
+          <p>
+            Architected a high-throughput microservices ecosystem designed to handle massive media ingestion without memory degradation, featuring dynamic Spring Cloud Gateway routing, stateless RBAC authentication, and a Redis cache-aside metadata tier.
+          </p>
+
+          <ul class="flagship-highlights">
+            <li>Spring Cloud Gateway dynamic routing with stateless RBAC JWT authentication</li>
+            <li>Slashed metadata query latency by 45% via Redis cache-aside architecture</li>
+            <li>Engineered resilient ingestion with Cloudinary chunked multipart streaming preventing heap memory overflows</li>
+            <li>Containerized microservices orchestration with Docker and automated service isolation</li>
+          </ul>
+
+          <ul class="flagship-stack mono" aria-label="Tech Stack">
+            <li>Java 21</li>
+            <li>Spring Boot 3</li>
+            <li>Spring Cloud Gateway</li>
+            <li>PostgreSQL</li>
+            <li>Redis</li>
+            <li>Docker</li>
+            <li>React.js</li>
+            <li>JWT RBAC</li>
+          </ul>
+
+          <div class="flagship-about">
+            <p class="flagship-stats-label mono">System Benchmark Metrics</p>
+            <dl class="flagship-stats">
+              <div>
+                <dt class="mono">Query Latency Cut</dt>
+                <dd>-45%</dd>
+              </div>
+              <div>
+                <dt class="mono">Upload Memory Overflows</dt>
+                <dd>0</dd>
+              </div>
+              <div>
+                <dt class="mono">Stateless Auth</dt>
+                <dd>JWT RBAC</dd>
+              </div>
+            </dl>
+          </div>
+
+          <a class="btn btn-primary flagship-cta" href="https://github.com" target="_blank" rel="noopener noreferrer">
+            View on GitHub
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 7h10v10"></path>
+              <path d="M7 17 17 7"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Additional Featured Projects Grid -->
+      <p class="work-subhead mono">More builds — Engineering &amp; Research</p>
+      <div class="project-grid">
+        <!-- CampusRide -->
+        <article class="project-card spot" data-reveal="true">
+          <div class="project-media">
+            <span class="media-tag mono">High-Concurrency</span>
+            <img src="assets/campusride-preview.svg" alt="CampusRide Concurrency Architecture" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <div class="project-meta mono">
+              <span>Ride Reservation Platform</span>
+              <span>Java / Spring Boot / PostgreSQL</span>
+            </div>
+            <h3>CampusRide</h3>
+            <p>Multi-tenant ride reservation platform designed to handle peak-hour traffic spikes with strict transactional integrity.</p>
+            <ul class="project-points">
+              <li>Eliminated booking race conditions and double-allocations using PostgreSQL row-level locks (<code>PESSIMISTIC_WRITE</code>).</li>
+              <li>Sustained sub-120ms p95 latency under peak concurrent loads by replacing Hibernate entity graphs with custom DTO projections.</li>
+              <li>Designed and documented 30+ RESTful APIs with centralized global exception handlers and OpenAPI/Swagger schemas.</li>
+            </ul>
+            <ul class="project-stack mono">
+              <li>Spring Boot</li>
+              <li>Spring Data JPA</li>
+              <li>PostgreSQL</li>
+              <li>Redis</li>
+              <li>Hibernate</li>
+              <li>React.js</li>
+            </ul>
+            <a class="project-link mono" href="https://github.com" target="_blank" rel="noopener noreferrer">
+              Examine Source &amp; Architecture
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 7h10v10"></path>
+                <path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- CodeE2LFDepth -->
+        <article class="project-card spot" data-reveal="true">
+          <div class="project-media">
+            <span class="media-tag mono">Deep Learning Vision</span>
+            <img src="assets/depth-preview.svg" alt="CodeE2LFDepth Swin Transformer Lightfield Depth Model" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <div class="project-meta mono">
+              <span>Light-Field Reconstruction</span>
+              <span>PyTorch / Swin Transformer</span>
+            </div>
+            <h3>CodeE2LFDepth</h3>
+            <p>Deep learning architecture for event-camera light-field depth estimation under extreme temporal and high-speed motion scenarios.</p>
+            <ul class="project-points">
+              <li>Engineered a hybrid CNN and windowed Swin Transformer combining local edge filters with shifted-window global attention.</li>
+              <li>Formulated a compound loss coupling spatial gradient penalties with L1 edge losses, yielding +1.8 dB PSNR and +0.06 SSIM gains.</li>
+              <li>Accelerated training throughput and minimized GPU memory footprint by profiling tensor bottlenecks and vectorizing PyTorch loaders.</li>
+            </ul>
+            <ul class="project-stack mono">
+              <li>PyTorch</li>
+              <li>Python</li>
+              <li>Swin-Transformer</li>
+              <li>CNN</li>
+              <li>Sintel/ESIM</li>
+              <li>CUDA</li>
+            </ul>
+            <a class="project-link mono" href="https://github.com" target="_blank" rel="noopener noreferrer">
+              Examine Source &amp; Research Model
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 7h10v10"></path>
+                <path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- ShipMyBuild Autonomous Agent Engine -->
+        <article class="project-card spot" data-reveal="true">
+          <div class="project-media">
+            <span class="media-tag mono">Agentic Workflows</span>
+            <img src="assets/shipmybuild-preview.svg" alt="ShipMyBuild HITL Engine" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <div class="project-meta mono">
+              <span>Human-in-the-Loop</span>
+              <span>Spring Boot / PostgreSQL / Telegram</span>
+            </div>
+            <h3>ShipMyBuild AI Engine</h3>
+            <p>Autonomous AI workflow coordinator enforcing strict safety constraints and real-time human verification gates for critical operations.</p>
+            <ul class="project-points">
+              <li>Engineered a 3-state human-in-the-loop workflow, atomically pausing and resuming AI agents for high-impact actions.</li>
+              <li>Built an inbound email filtering pipeline via a 3-condition PostgreSQL gate, completely eliminating automated reply loops.</li>
+              <li>Implemented Telegram webhook handlers for 6 interactive callbacks with duplicate-request isolation guards.</li>
+            </ul>
+            <ul class="project-stack mono">
+              <li>AI Agents</li>
+              <li>PostgreSQL Gates</li>
+              <li>Telegram Webhooks</li>
+              <li>Idempotency Locks</li>
+            </ul>
+            <a class="project-link mono" href="#experience">
+              View Internship Details
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 7h10v10"></path>
+                <path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Samsung PRISM Real-Time Video Anonymizer -->
+        <article class="project-card spot" data-reveal="true">
+          <div class="project-media">
+            <span class="media-tag mono">Vision Research</span>
+            <img src="assets/samsung-preview.svg" alt="Samsung PRISM Video Face Anonymizer" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <div class="project-meta mono">
+              <span>Samsung R&amp;D Institute India</span>
+              <span>OpenCV / PyTorch / Colab GPU</span>
+            </div>
+            <h3>Samsung PRISM Anonymizer</h3>
+            <p>Real-time video face anonymization pipeline replacing sensitive human identities with photo-realistic synthetic faces.</p>
+            <ul class="project-points">
+              <li>Built real-time video anonymization replacing identities with photo-realistic synthetic faces for privacy compliance.</li>
+              <li>Integrated face detection, multi-object tracking (MOT), and facial embeddings to guarantee frame-to-frame temporal consistency.</li>
+              <li>Applied face swapping and Poisson blending, optimizing models for near real-time GPU inference in Google Colab.</li>
+            </ul>
+            <ul class="project-stack mono">
+              <li>PyTorch</li>
+              <li>Torchvision</li>
+              <li>OpenCV</li>
+              <li>Facial Embeddings</li>
+              <li>Colab GPU</li>
+            </ul>
+            <a class="project-link mono" href="#recognition">
+              View Research Certificate
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 7h10v10"></path>
+                <path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 03: Experience -->
+    <section id="experience" class="section frame">
+      <header class="section-head">
+        <div class="section-rule">
+          <span class="mono" data-scramble="true">[03] Experience</span>
+          <span class="mono rule-meta" aria-hidden="true">SS—26 / §03</span>
+        </div>
+        <div class="section-head-grid">
+          <div>
+            <h2 class="section-title" data-reveal="true">Where I've <em>been</em></h2>
+          </div>
+        </div>
+      </header>
+
+      <ol class="exp-list">
+        <!-- ShipMyBuild -->
+        <li class="exp-row spot" data-reveal="true">
+          <div class="exp-when mono">
+            <span>E/02</span>
+            <span>May 2026 — July 2026</span>
+            <span class="live-tag"><span class="status-dot" aria-hidden="true"></span> Production</span>
+          </div>
+          <div class="exp-role">
+            <h3>Software Engineer Intern</h3>
+            <p>ShipMyBuild <span>/ Remote</span></p>
+            <span class="exp-visit mono">Enterprise Agentic Workflows</span>
+          </div>
+          <ul class="exp-points">
+            <li>Engineered a 3-state human-in-the-loop workflow, atomically pausing and resuming AI agents for high-impact actions.</li>
+            <li>Built an inbound email filtering pipeline via a 3-condition PostgreSQL gate, preventing automated reply loops.</li>
+            <li>Implemented Telegram webhook handlers for 6 interactive callbacks with duplicate-request guards and error isolation.</li>
+          </ul>
+        </li>
+
+        <!-- Samsung PRISM -->
+        <li class="exp-row spot" data-reveal="true">
+          <div class="exp-when mono">
+            <span>E/01</span>
+            <span>Mar 2025 — Sep 2025</span>
+          </div>
+          <div class="exp-role">
+            <h3>Samsung PRISM Research Intern</h3>
+            <p>Samsung R&amp;D Institute India <span>/ Virtual</span></p>
+            <span class="exp-visit mono">Computer Vision Research &amp; Privacy</span>
+          </div>
+          <ul class="exp-points">
+            <li>Built a real-time video face anonymization pipeline replacing identities with photo-realistic synthetic faces.</li>
+            <li>Integrated face detection, multi-object tracking, and facial embeddings to ensure temporal consistency and privacy.</li>
+            <li>Applied face swapping and blending techniques, optimizing models for near real-time GPU inference in Colab.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Section 04: Technical Stack & Mastery -->
+    <section id="stack" class="section frame">
+      <header class="section-head">
+        <div class="section-rule">
+          <span class="mono" data-scramble="true">[04] Technical Stack</span>
+          <span class="mono rule-meta" aria-hidden="true">SS—26 / §04</span>
+        </div>
+        <div class="section-head-grid">
+          <div>
+            <h2 class="section-title" data-reveal="true">Tools of the <em>craft</em></h2>
+            <p class="section-note" data-reveal="true">Languages, distributed frameworks, and deep learning libraries I build with daily.</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="stack-grid">
+        <!-- Languages -->
+        <div class="stack-cat" data-reveal="true">
+          <header>
+            <span class="mono">01</span>
+            <span class="mono">Core Languages</span>
+          </header>
+          <h3>Languages</h3>
+          <ul>
+            <li tabindex="0">
+              <span class="stack-name">Java</span>
+              <span class="stack-desc">Core language for backend enterprise microservices, concurrency, OOP design, and JVM profiling.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">C++</span>
+              <span class="stack-desc">Algorithmic problem solving on LeetCode/GFG, memory management, STL data structures.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">Python</span>
+              <span class="stack-desc">PyTorch deep learning, computer vision models, numerical tensors, data pipelines.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">JavaScript (ES6+) &amp; SQL</span>
+              <span class="stack-desc">Modern frontend asynchronous JS and complex relational querying with ACID guarantees.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Backend Frameworks -->
+        <div class="stack-cat" data-reveal="true">
+          <header>
+            <span class="mono">02</span>
+            <span class="mono">Distributed Architecture</span>
+          </header>
+          <h3>Backend &amp; Cloud</h3>
+          <ul>
+            <li tabindex="0">
+              <span class="stack-name">Spring Boot &amp; Gateway</span>
+              <span class="stack-desc">Microservices routing, stateless security filters, rate limiting, and RESTful APIs.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">Spring Data JPA &amp; Hibernate</span>
+              <span class="stack-desc">ORM modeling, N+1 query elimination, custom DTO projections, and pessimistic locks.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">Node.js &amp; Express.js</span>
+              <span class="stack-desc">Asynchronous event loops, REST endpoints, and webhook integration services.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">Spring AI &amp; Gen AI</span>
+              <span class="stack-desc">Autonomous agent coordination, prompt templates, and LLM integrations.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Databases & Caching -->
+        <div class="stack-cat" data-reveal="true">
+          <header>
+            <span class="mono">03</span>
+            <span class="mono">Storage &amp; Persistence</span>
+          </header>
+          <h3>Databases &amp; Caching</h3>
+          <ul>
+            <li tabindex="0">
+              <span class="stack-name">PostgreSQL</span>
+              <span class="stack-desc">Row-level locking (SELECT FOR UPDATE), transaction isolation, indexed queries.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">Redis</span>
+              <span class="stack-desc">In-memory cache-aside pattern, session stores, sub-millisecond metadata lookups.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">MySQL &amp; MongoDB</span>
+              <span class="stack-desc">Relational clustering and document-based NoSQL storage for semi-structured data.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Deep Learning & Vision -->
+        <div class="stack-cat" data-reveal="true">
+          <header>
+            <span class="mono">04</span>
+            <span class="mono">Artificial Intelligence</span>
+          </header>
+          <h3>Deep Learning &amp; Vision</h3>
+          <ul>
+            <li tabindex="0">
+              <span class="stack-name">PyTorch &amp; Torchvision</span>
+              <span class="stack-desc">Custom loss formulations, CUDA acceleration, and vectorized DataLoader pipelines.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">Swin Transformers &amp; CNNs</span>
+              <span class="stack-desc">Windowed shifted-attention models for light-field depth estimation and feature fusion.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">OpenCV</span>
+              <span class="stack-desc">Facial landmark alignment, Poisson blending, multi-object tracking, and video processing.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Frontend Development -->
+        <div class="stack-cat" data-reveal="true">
+          <header>
+            <span class="mono">05</span>
+            <span class="mono">User Experience</span>
+          </header>
+          <h3>Frontend Development</h3>
+          <ul>
+            <li tabindex="0">
+              <span class="stack-name">React.js &amp; Next.js</span>
+              <span class="stack-desc">Component-driven SPAs, server-side rendering, and responsive state management.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">Tailwind CSS &amp; CSS3</span>
+              <span class="stack-desc">Modern responsive styling, custom utility classes, and fluid typography.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">HTML5 &amp; Semantic Web</span>
+              <span class="stack-desc">Accessible DOM structure, ARIA compliance, and high-performance layouts.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tools & DevOps -->
+        <div class="stack-cat" data-reveal="true">
+          <header>
+            <span class="mono">06</span>
+            <span class="mono">Infrastructure &amp; DevOps</span>
+          </header>
+          <h3>Tools &amp; Cloud</h3>
+          <ul>
+            <li tabindex="0">
+              <span class="stack-name">Docker</span>
+              <span class="stack-desc">Containerizing services, multi-stage builds, and reproducible dev environments.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">AWS (S3 &amp; EC2)</span>
+              <span class="stack-desc">Object storage streaming and cloud server deployments.</span>
+            </li>
+            <li tabindex="0">
+              <span class="stack-name">Git, Postman &amp; Linux</span>
+              <span class="stack-desc">Version control, API test suites, shell scripting, and server maintenance.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 05: Recognition & Certifications -->
+    <section id="recognition" class="section frame">
+      <header class="section-head">
+        <div class="section-rule">
+          <span class="mono" data-scramble="true">[05] Recognition</span>
+          <span class="mono rule-meta" aria-hidden="true">SS—26 / §05</span>
+        </div>
+        <div class="section-head-grid">
+          <div>
+            <h2 class="section-title" data-reveal="true">Proof <em>of work</em></h2>
+            <p class="section-note" data-reveal="true">Milestones, verified credentials, and institutional leadership.</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="recog-grid">
+        <!-- Feature Spotlight: Samsung PRISM -->
+        <article class="recog-feature spot" data-reveal="true">
+          <div class="recog-feature-top mono">
+            <span class="tag tag-signal">Research Internship</span>
+            <span>2025</span>
+          </div>
+          <div class="recog-scale">
+            <span>R&amp;D</span>
+            <small class="mono">Samsung R&amp;D Institute India</small>
+          </div>
+          <h3>Samsung PRISM Research Internship Certificate</h3>
+          <p class="recog-org mono">Samsung R&amp;D Institute India</p>
+          <p>
+            Awarded for successfully engineering real-time video face anonymization pipelines, achieving temporal consistency via facial embeddings and multi-object tracking optimized for near real-time GPU inference.
+          </p>
+        </article>
+
+        <!-- Recognition & Leadership List -->
+        <ul class="recog-list">
+          <li data-reveal="true">
+            <div class="recog-row-top mono">
+              <span class="tag">Industry Internship</span>
+              <span>May 2026 — Jul 2026</span>
+            </div>
+            <h3>Software Engineer Intern Certificate</h3>
+            <p class="recog-org mono">ShipMyBuild</p>
+            <p>Recognized for designing 3-state human-in-the-loop autonomous AI agent workflows, PostgreSQL reply loop prevention gates, and resilient Telegram webhook callback architectures.</p>
+          </li>
+
+          <li data-reveal="true">
+            <div class="recog-row-top mono">
+              <span class="tag">Gen AI Certification</span>
+              <span>2026</span>
+            </div>
+            <h3>Java Spring Framework, Spring Boot, Spring AI Developer</h3>
+            <p class="recog-org mono">Gen AI Developer Certificate</p>
+            <p>Comprehensive credential covering modern microservices development with Spring Boot 3, Spring Cloud Gateway, and intelligent generative AI agent orchestration with Spring AI.</p>
+          </li>
+
+          <li data-reveal="true">
+            <div class="recog-row-top mono">
+              <span class="tag">Leadership</span>
+              <span>TIET Patiala</span>
+            </div>
+            <h3>Group Representative (GR)</h3>
+            <p class="recog-org mono">Batch Representative for Group 2P11 at TIET</p>
+            <p>Elected batch representative responsible for academic liaising, coordinating curriculum laboratories, and organizing collaborative engineering initiatives for Group 2P11.</p>
+          </li>
+
+          <li data-reveal="true">
+            <div class="recog-row-top mono">
+              <span class="tag">Academic Foundation</span>
+              <span>2021 — 2023</span>
+            </div>
+            <h3>CBSE Class XII – Non-Medical (89.6%)</h3>
+            <p class="recog-org mono">Government Model Senior Secondary School (GMSSS), Sector 16 Chandigarh</p>
+            <p>Graduated with 89.6% distinction across Mathematics, Physics, and Chemistry, laying the algorithmic and analytical groundwork for computer science.</p>
+          </li>
+        </ul>
+      </div>
+
+      <a class="btn btn-ghost resume-btn" href="Sukhwinder_Singh_Resume.pdf" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+        </svg>
+        Download Full Résumé (PDF)
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 7h10v10"></path>
+          <path d="M7 17 17 7"></path>
+        </svg>
+      </a>
+    </section>
+
+    <!-- Signal Band Marquee in Signal Orange -->
+    <div class="signal-band" aria-hidden="true">
+      <div class="signal-track">
+        <div>
+          <span>Available for work</span><i>✦</i>
+          <span>Software Engineering</span><i>✦</i>
+          <span>Microservices &amp; Distributed Systems</span><i>✦</i>
+          <span>PyTorch &amp; Vision</span><i>✦</i>
+          <span>Let's talk</span><i>✦</i>
+        </div>
+        <div>
+          <span>Available for work</span><i>✦</i>
+          <span>Software Engineering</span><i>✦</i>
+          <span>Microservices &amp; Distributed Systems</span><i>✦</i>
+          <span>PyTorch &amp; Vision</span><i>✦</i>
+          <span>Let's talk</span><i>✦</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 06: Contact -->
+    <section id="contact" class="contact frame">
+      <div class="section-rule">
+        <span class="mono" data-scramble="true">[06] Next move</span>
+        <span class="mono rule-meta" aria-hidden="true">SS—26 / §06</span>
+      </div>
+
+      <h2 class="contact-title" data-reveal="true">
+        Let's build <em>the next thing.</em>
+      </h2>
+
+      <div class="contact-mail" data-reveal="true">
+        <a href="mailto:sukhwindersingh102316014@gmail.com" data-cursor="true">
+          sukhwindersingh102316014@gmail.com
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 7h10v10"></path>
+            <path d="M7 17 17 7"></path>
+          </svg>
+        </a>
+
+        <button type="button" class="copy-email" aria-label="Copy email address to clipboard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+          </svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <dl class="contact-grid">
+        <div>
+          <dt>Location</dt>
+          <dd>Punjab, India</dd>
+        </div>
+        <div>
+          <dt>Local Time</dt>
+          <dd><time class="contact-clock">--:--:-- <span>IST</span></time></dd>
+        </div>
+        <div>
+          <dt>Elsewhere</dt>
+          <dd class="contact-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.679.919.679 1.852 0 1.336-.012 2.415-.012 2.744 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"></path>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg>
+              LinkedIn
+            </a>
+            <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.384 1.384 0 0 0 0 2.769h7.129a1.384 1.384 0 0 0 0-2.769z"></path>
+              </svg>
+              LeetCode (400+)
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt>Résumé</dt>
+          <dd>
+            <a href="Sukhwinder_Singh_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download PDF
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Site Footer -->
+    <footer class="site-footer frame">
+      <span>&copy; 2026 Sukhwinder Singh. All rights reserved.</span>
+      <span class="mono">Engineered with modern HTML5, CSS3 &amp; custom 3D Canvas</span>
+      <a href="#top" class="mono">Back to top &uarr;</a>
+    </footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
 </html>

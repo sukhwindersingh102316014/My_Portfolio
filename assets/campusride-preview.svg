@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16150f" />
+      <stop offset="100%" stop-color="#181a1d" />
+    </linearGradient>
+    <pattern id="grid2" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bgGrad2)" />
+  <rect width="1200" height="750" fill="url(#grid2)" />
+
+  <!-- App Header -->
+  <rect x="40" y="40" width="1120" height="50" rx="8" fill="#1e2226" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <circle cx="70" cy="65" r="6" fill="#ff5f56" />
+  <circle cx="90" cy="65" r="6" fill="#ffbd2e" />
+  <circle cx="110" cy="65" r="6" fill="#27c93f" />
+  <rect x="140" y="52" width="320" height="26" rx="4" fill="#16150f" />
+  <text x="155" y="69" fill="#99958a" font-family="'Courier New', monospace" font-size="12">campusride.api/reservations/lock-slot</text>
+  <rect x="990" y="52" width="150" height="26" rx="4" fill="#22c55e" />
+  <text x="1065" y="69" fill="#16150f" font-family="'Courier New', monospace" font-weight="700" font-size="11" text-anchor="middle">LOCK: ACQUIRED</text>
+
+  <!-- Left Side: Concurrency Lock Visualization -->
+  <rect x="40" y="110" width="540" height="420" rx="8" fill="#191c20" stroke="rgba(255,255,255,0.08)" />
+  <text x="70" y="150" fill="#ffffff" font-family="sans-serif" font-weight="700" font-size="16">PostgreSQL Row-Level Concurrency Gate</text>
+  <text x="70" y="170" fill="#22c55e" font-family="'Courier New', monospace" font-size="11">RACE CONDITION PREVENTION: SELECT FOR UPDATE</text>
+
+  <!-- Thread 1 -->
+  <rect x="70" y="200" width="480" height="60" rx="6" fill="#21272d" stroke="#22c55e" stroke-width="1" />
+  <text x="90" y="225" fill="#ffffff" font-family="sans-serif" font-weight="600" font-size="13">Worker Thread #1 — Rider Patiala -> Chandigarh</text>
+  <text x="90" y="245" fill="#22c55e" font-family="'Courier New', monospace" font-size="11">Status: LOCK RESERVED [Row #4092] · Commit Success</text>
+
+  <!-- Thread 2 (Blocked) -->
+  <rect x="70" y="280" width="480" height="60" rx="6" fill="#2d2222" stroke="#ef4444" stroke-width="1" />
+  <text x="90" y="305" fill="#ffffff" font-family="sans-serif" font-weight="600" font-size="13">Worker Thread #2 — Simultaneous Overlapping Seat Booking</text>
+  <text x="90" y="325" fill="#ef4444" font-family="'Courier New', monospace" font-size="11">Status: BLOCKED &amp; ROLLBACK · Double-Booking Prevented</text>
+
+  <!-- Thread 3 -->
+  <rect x="70" y="360" width="480" height="60" rx="6" fill="#21272d" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+  <text x="90" y="385" fill="#ffffff" font-family="sans-serif" font-weight="600" font-size="13">Worker Thread #3 — Queued Request</text>
+  <text x="90" y="405" fill="#99958a" font-family="'Courier New', monospace" font-size="11">Status: Released &amp; re-evaluated cleanly · 0 Race Conditions</text>
+
+  <rect x="70" y="440" width="480" height="65" rx="6" fill="#16150f" />
+  <text x="90" y="465" fill="#e9e6df" font-family="'Courier New', monospace" font-size="11">DATABASE ISOLATION LEVEL</text>
+  <text x="90" y="488" fill="#ff4d00" font-family="sans-serif" font-size="14" font-weight="700">READ COMMITTED with Explicit PESSIMISTIC_WRITE</text>
+
+  <!-- Right Side: Hibernate N+1 Elimination & DTO Projections -->
+  <rect x="620" y="110" width="540" height="420" rx="8" fill="#191c20" stroke="rgba(255,255,255,0.08)" />
+  <text x="650" y="150" fill="#ffffff" font-family="sans-serif" font-weight="700" font-size="16">Hibernate N+1 Query Elimination</text>
+  <text x="650" y="170" fill="#ff4d00" font-family="'Courier New', monospace" font-size="11">DTO PROJECTIONS &amp; SUB-120MS P95 LATENCY</text>
+
+  <!-- Latency comparison bars -->
+  <text x="650" y="220" fill="#99958a" font-family="sans-serif" font-size="12">Default Entity Traversal (N+1 Queries):</text>
+  <rect x="650" y="235" width="460" height="28" rx="4" fill="#382424" />
+  <rect x="650" y="235" width="420" height="28" rx="4" fill="#ef4444" opacity="0.8"/>
+  <text x="1080" y="254" fill="#ffffff" font-family="'Courier New', monospace" font-weight="700" font-size="12" text-anchor="end">480ms p95 (Bottleneck)</text>
+
+  <text x="650" y="300" fill="#99958a" font-family="sans-serif" font-size="12">Optimized with DTO Projections + Spring Data JPA:</text>
+  <rect x="650" y="315" width="460" height="28" rx="4" fill="#1c3024" />
+  <rect x="650" y="315" width="115" height="28" rx="4" fill="#22c55e" />
+  <text x="780" y="334" fill="#ffffff" font-family="'Courier New', monospace" font-weight="700" font-size="12">94ms p95 (&lt;120ms target)</text>
+
+  <rect x="650" y="370" width="480" height="135" rx="6" fill="#16150f" stroke="rgba(255,255,255,0.08)" />
+  <text x="670" y="400" fill="#ff7b39" font-family="'Courier New', monospace" font-size="12" font-weight="700">Spring Data JPA Repository Definition</text>
+  <text x="670" y="425" fill="#99958a" font-family="'Courier New', monospace" font-size="11">@Query("SELECT new com.campusride.dto.RideSummaryDTO(r.id,")</text>
+  <text x="670" y="445" fill="#99958a" font-family="'Courier New', monospace" font-size="11">       "r.driver.name, r.availableSeats, r.fare)")</text>
+  <text x="670" y="470" fill="#22c55e" font-family="'Courier New', monospace" font-size="11">List&lt;RideSummaryDTO&gt; findActiveRidesWithDetails();</text>
+
+  <!-- Bottom Strip -->
+  <rect x="40" y="560" width="1120" height="130" rx="8" fill="#191c20" stroke="rgba(255,255,255,0.08)" />
+  <text x="70" y="600" fill="#99958a" font-family="'Courier New', monospace" font-size="11">ENTERPRISE PERFORMANCE METRICS</text>
+
+  <text x="70" y="650" fill="#ffffff" font-family="sans-serif" font-size="34" font-weight="800">30+</text>
+  <text x="70" y="670" fill="#99958a" font-family="sans-serif" font-size="12">RESTful APIs Built</text>
+
+  <text x="350" y="650" fill="#22c55e" font-family="sans-serif" font-size="34" font-weight="800">&lt;120ms</text>
+  <text x="350" y="670" fill="#99958a" font-family="sans-serif" font-size="12">p95 Latency Maintained</text>
+
+  <text x="640" y="650" fill="#ff4d00" font-family="sans-serif" font-size="34" font-weight="800">0</text>
+  <text x="640" y="670" fill="#99958a" font-family="sans-serif" font-size="12">Race Conditions Under Peak Load</text>
+
+  <text x="940" y="650" fill="#38bdf8" font-family="sans-serif" font-size="34" font-weight="800">Swagger</text>
+  <text x="940" y="670" fill="#99958a" font-family="sans-serif" font-size="12">OpenAPI Documentation</text>
+</svg>

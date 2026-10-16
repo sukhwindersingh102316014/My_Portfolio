@@ -1,50 +1,32 @@
 # Sukhwinder Singh — Portfolio
 
-A production-ready developer portfolio built with React, Vite and Tailwind CSS. All content
-(education, skills, projects, links) is sourced from `src/data/resume.js`, which was populated
-directly from the résumé — including live/GitHub/Swagger links extracted from the PDF's actual
-embedded hyperlinks.
+Personal editorial portfolio website of Sukhwinder Singh — Software Engineer specializing in resilient microservices, distributed architectures, PyTorch deep learning pipelines, and autonomous AI workflows.
 
-## Local development
+## 🚀 Live Demo & Structure
+
+- **index.html** — Semantic markup, interactive project showcases, terminal console, and experience timeline
+- **styles.css** — Custom design system, typography, dark/light themes, and responsive layout
+- **main.js** — Interactive behaviors, preloader, particle canvas, navigation highlighting, and filtering
+- **assets/** — Project previews and system architecture diagrams
+- **Sukhwinder_Singh_Resume.pdf** / **resume.pdf** — Current CV / Resume
+
+## 💻 Local Development
+
+You can run the portfolio locally using any static file server:
 
 ```bash
-npm install
+# Using npm
+npm start
+# or
 npm run dev
 ```
 
-## Build
+Alternatively, open `index.html` directly in your browser or run with Python:
 
 ```bash
-npm run build
-npm run preview
+python -m http.server 3000
 ```
 
-## Deploy to Vercel
+## 📄 License
 
-1. Push this folder to a GitHub repo.
-2. Import the repo in [Vercel](https://vercel.com/new).
-3. Framework preset: **Vite**. Build command `npm run build`, output directory `dist` (auto-detected).
-4. Deploy.
-
-Or from the CLI:
-
-```bash
-npm i -g vercel
-vercel
-```
-
-## Structure
-
-```
-src/
-  data/resume.js       single source of truth for all résumé content
-  hooks/                useReveal (scroll animations), useActiveSection (nav highlighting)
-  components/           one component per section + shared UI primitives (Tag, LinkButton, SectionHeading)
-public/
-  Sukhwinder_Singh_Resume.pdf   served for the résumé download CTA
-```
-
-## Updating content
-
-Edit `src/data/resume.js` only — every section reads from it, so there's a single place to keep
-in sync with the résumé.
+MIT © [Sukhwinder Singh](https://github.com/sukhwindersingh102316014)

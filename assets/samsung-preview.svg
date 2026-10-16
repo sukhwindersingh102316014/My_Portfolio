@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16150f" />
+      <stop offset="100%" stop-color="#141c24" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bgGrad5)" />
+
+  <rect x="40" y="40" width="1120" height="50" rx="8" fill="#1b2530" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <circle cx="70" cy="65" r="6" fill="#ff5f56" />
+  <circle cx="90" cy="65" r="6" fill="#ffbd2e" />
+  <circle cx="110" cy="65" r="6" fill="#27c93f" />
+  <text x="140" y="69" fill="#e9e6df" font-family="'Courier New', monospace" font-size="12">Samsung PRISM // Real-Time Video Face Anonymization Pipeline</text>
+  <rect x="970" y="52" width="170" height="26" rx="4" fill="#0284c7" />
+  <text x="1055" y="69" fill="#ffffff" font-family="'Courier New', monospace" font-weight="700" font-size="11" text-anchor="middle">GPU INFERENCE: LIVE</text>
+
+  <!-- Left: Pipeline Architecture -->
+  <rect x="40" y="110" width="600" height="420" rx="8" fill="#18212b" stroke="rgba(255,255,255,0.06)" />
+  <text x="70" y="150" fill="#ffffff" font-family="sans-serif" font-weight="700" font-size="16">Temporal Face Swapping &amp; Identity Privacy Pipeline</text>
+  <text x="70" y="170" fill="#38bdf8" font-family="'Courier New', monospace" font-size="11">MULTI-OBJECT TRACKING + FACIAL EMBEDDINGS</text>
+
+  <!-- Step A: Video Input & Multi-Face Detection -->
+  <rect x="70" y="200" width="540" height="60" rx="6" fill="#222e3c" stroke="#38bdf8" stroke-width="1"/>
+  <text x="90" y="225" fill="#ffffff" font-family="sans-serif" font-weight="600" font-size="13">Stage 1: Real-Time Face Detection &amp; Landmark Alignment</text>
+  <text x="90" y="245" fill="#38bdf8" font-family="'Courier New', monospace" font-size="11">68-Point Facial Keypoints · Multi-Scale ResNet Backbone</text>
+
+  <!-- Step B: MOT Tracking -->
+  <rect x="70" y="275" width="540" height="60" rx="6" fill="#222e3c" stroke="#22c55e" stroke-width="1"/>
+  <text x="90" y="300" fill="#ffffff" font-family="sans-serif" font-weight="600" font-size="13">Stage 2: Multi-Object Tracking &amp; Identity Embedding</text>
+  <text x="90" y="320" fill="#22c55e" font-family="'Courier New', monospace" font-size="11">Cosine Metric Temporal Consistency · Zero ID Flipping</text>
+
+  <!-- Step C: Synthetic Face Swap & Blending -->
+  <rect x="70" y="350" width="540" height="60" rx="6" fill="#222e3c" stroke="#ff4d00" stroke-width="1"/>
+  <text x="90" y="375" fill="#ffffff" font-family="sans-serif" font-weight="600" font-size="13">Stage 3: Photo-Realistic Synthetic Face Synthesis &amp; Poisson Blending</text>
+  <text x="90" y="395" fill="#ff7b39" font-family="'Courier New', monospace" font-size="11">Skin-Tone Matching · Boundary Artifact Suppression</text>
+
+  <rect x="70" y="425" width="540" height="85" rx="6" fill="#16150f" />
+  <text x="90" y="455" fill="#e9e6df" font-family="'Courier New', monospace" font-size="11">HARDWARE OPTIMIZATION</text>
+  <text x="90" y="480" fill="#38bdf8" font-family="sans-serif" font-size="14" font-weight="700">Near Real-Time GPU Inference in Colab / CUDA Accelerated</text>
+
+  <!-- Right: Visual Simulation -->
+  <rect x="670" y="110" width="490" height="420" rx="8" fill="#18212b" stroke="rgba(255,255,255,0.06)" />
+  <text x="700" y="150" fill="#ffffff" font-family="sans-serif" font-weight="700" font-size="16">Temporal Video Stream Monitor</text>
+  <text x="700" y="170" fill="#22c55e" font-family="'Courier New', monospace" font-size="11">ORIGINAL IDENTITY ANONYMIZED → SYNTHETIC FACE</text>
+
+  <g transform="translate(700, 200)">
+    <rect width="430" height="210" rx="6" fill="#111" stroke="rgba(255,255,255,0.1)" />
+    <!-- Face Box 1 -->
+    <rect x="50" y="30" width="130" height="150" rx="4" fill="#1a232f" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4"/>
+    <circle cx="115" cy="85" r="30" fill="#2d3d52" />
+    <circle cx="105" cy="80" r="4" fill="#38bdf8" />
+    <circle cx="125" cy="80" r="4" fill="#38bdf8" />
+    <path d="M 105 100 Q 115 110 125 100" stroke="#38bdf8" stroke-width="2" fill="none" />
+    <text x="115" y="155" fill="#38bdf8" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">TARGET: ID_01</text>
+
+    <!-- Arrow Swapped -->
+    <path d="M 200 105 L 240 105" stroke="#ff4d00" stroke-width="2" />
+    <polygon points="245,105 235,100 235,110" fill="#ff4d00" />
+
+    <!-- Face Box 2 (Synthetic) -->
+    <rect x="260" y="30" width="130" height="150" rx="4" fill="#2e2019" stroke="#ff4d00" stroke-width="2" />
+    <circle cx="325" cy="85" r="30" fill="#4d3024" />
+    <circle cx="315" cy="80" r="4" fill="#ff4d00" />
+    <circle cx="335" cy="80" r="4" fill="#ff4d00" />
+    <path d="M 315 100 Q 325 110 335 100" stroke="#ff4d00" stroke-width="2" fill="none" />
+    <text x="325" y="155" fill="#ff7b39" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">SYNTHETIC_A4</text>
+  </g>
+
+  <rect x="700" y="430" width="430" height="80" rx="6" fill="#16150f" />
+  <text x="720" y="460" fill="#22c55e" font-family="'Courier New', monospace" font-size="11">✓ PRIVACY PRESERVED</text>
+  <text x="720" y="485" fill="#99958a" font-family="sans-serif" font-size="12">Temporal embedding matching ensures smooth transitions across video frames.</text>
+
+  <!-- Bottom Strip -->
+  <rect x="40" y="550" width="1120" height="140" rx="8" fill="#18212b" stroke="rgba(255,255,255,0.06)" />
+  <text x="70" y="585" fill="#99958a" font-family="'Courier New', monospace" font-size="11">SAMSUNG R&amp;D INSTITUTE RESEARCH HIGHLIGHTS</text>
+
+  <text x="70" y="630" fill="#ffffff" font-family="sans-serif" font-size="30" font-weight="800">Samsung PRISM</text>
+  <text x="70" y="655" fill="#99958a" font-family="sans-serif" font-size="12">Research Intern (Virtual) · Mar 2025 – Sep 2025</text>
+
+  <text x="480" y="630" fill="#38bdf8" font-family="sans-serif" font-size="30" font-weight="800">Near Real-Time</text>
+  <text x="480" y="655" fill="#99958a" font-family="sans-serif" font-size="12">GPU Pipeline in Google Colab</text>
+
+  <text x="860" y="630" fill="#ff4d00" font-family="sans-serif" font-size="30" font-weight="800">Certificate</text>
+  <text x="860" y="655" fill="#99958a" font-family="sans-serif" font-size="12">Issued by Samsung R&amp;D Institute India</text>
+</svg>

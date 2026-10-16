@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16150f" />
+      <stop offset="100%" stop-color="#1a1824" />
+    </linearGradient>
+    <linearGradient id="depthHeatmap" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="35%" stop-color="#06b6d4" />
+      <stop offset="70%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#ff4d00" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bgGrad3)" />
+
+  <!-- Top Status Bar -->
+  <rect x="40" y="40" width="1120" height="50" rx="8" fill="#201c29" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <circle cx="70" cy="65" r="6" fill="#ff5f56" />
+  <circle cx="90" cy="65" r="6" fill="#ffbd2e" />
+  <circle cx="110" cy="65" r="6" fill="#27c93f" />
+  <text x="140" y="69" fill="#e9e6df" font-family="'Courier New', monospace" font-size="12">CodeE2LFDepth // Event-Camera Light-Field Depth Estimator</text>
+  <rect x="980" y="52" width="160" height="26" rx="4" fill="#ff4d00" />
+  <text x="1060" y="69" fill="#16150f" font-family="'Courier New', monospace" font-weight="700" font-size="11" text-anchor="middle">+1.8 dB PSNR GAIN</text>
+
+  <!-- Left: Model Pipeline Architecture -->
+  <rect x="40" y="110" width="600" height="470" rx="8" fill="#1d1926" stroke="rgba(255,255,255,0.06)" />
+  <text x="70" y="150" fill="#ffffff" font-family="sans-serif" font-weight="700" font-size="16">Hybrid Swin Transformer + CNN Architecture</text>
+  <text x="70" y="170" fill="#a855f7" font-family="'Courier New', monospace" font-size="11">SPATIOTEMPORAL LIGHT-FIELD RECONSTRUCTION</text>
+
+  <!-- Input Block: Event Stream -->
+  <rect x="70" y="200" width="150" height="80" rx="6" fill="#282236" stroke="#06b6d4" stroke-width="1.5" />
+  <text x="145" y="235" fill="#06b6d4" font-family="sans-serif" font-weight="700" font-size="12" text-anchor="middle">Event Stream (x,y,t,p)</text>
+  <text x="145" y="255" fill="#99958a" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">Microsecond Temporal Res</text>
+
+  <!-- Arrow -->
+  <path d="M 220 240 L 260 240" stroke="#06b6d4" stroke-width="2" />
+  <polygon points="265,240 255,235 255,245" fill="#06b6d4" />
+
+  <!-- Multi-scale CNN Stem -->
+  <rect x="270" y="195" width="150" height="90" rx="6" fill="#282236" stroke="#3b82f6" stroke-width="1.5" />
+  <text x="345" y="230" fill="#3b82f6" font-family="sans-serif" font-weight="700" font-size="12" text-anchor="middle">CNN Feature Stem</text>
+  <text x="345" y="250" fill="#99958a" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">Shallow Edge Filters</text>
+  <text x="345" y="268" fill="#22c55e" font-family="'Courier New', monospace" font-size="9" text-anchor="middle">Strided Spatial Down</text>
+
+  <!-- Arrow -->
+  <path d="M 420 240 L 460 240" stroke="#a855f7" stroke-width="2" />
+  <polygon points="465,240 455,235 455,245" fill="#a855f7" />
+
+  <!-- Windowed Swin Transformer -->
+  <rect x="470" y="190" width="150" height="100" rx="6" fill="#282236" stroke="#a855f7" stroke-width="1.5" />
+  <text x="545" y="225" fill="#a855f7" font-family="sans-serif" font-weight="700" font-size="12" text-anchor="middle">Windowed Swin</text>
+  <text x="545" y="245" fill="#ffffff" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">Shifted Window MSA</text>
+  <text x="545" y="265" fill="#99958a" font-family="sans-serif" font-size="10" text-anchor="middle">Global Context</text>
+
+  <!-- Loss Function Section -->
+  <rect x="70" y="320" width="550" height="140" rx="6" fill="#16150f" stroke="rgba(255,255,255,0.08)" />
+  <text x="95" y="350" fill="#ff7b39" font-family="'Courier New', monospace" font-size="12" font-weight="700">Compound Objective Loss Function</text>
+  <text x="95" y="380" fill="#ffffff" font-family="'Courier New', monospace" font-size="14">L_total = λ_1 · L_L1 + λ_2 · L_gradient + λ_3 · L_SSIM</text>
+  <text x="95" y="410" fill="#99958a" font-family="sans-serif" font-size="12">Coupling spatial gradient penalties with L1 edge losses sharpens depth boundaries</text>
+  <text x="95" y="435" fill="#22c55e" font-family="'Courier New', monospace" font-size="11">✓ Vectorized PyTorch Loader · Profiling Eliminated Tensor Bottlenecks</text>
+
+  <!-- Right: Depth Map Heatmap Visualizer -->
+  <rect x="670" y="110" width="490" height="470" rx="8" fill="#1d1926" stroke="rgba(255,255,255,0.06)" />
+  <text x="700" y="150" fill="#ffffff" font-family="sans-serif" font-weight="700" font-size="16">Reconstructed Light-Field Depth Map</text>
+  <text x="700" y="170" fill="#ff4d00" font-family="'Courier New', monospace" font-size="11">SINTEL &amp; ESIM SYNTHETIC/REAL BENCHMARKS</text>
+
+  <!-- Heatmap simulation -->
+  <g transform="translate(700, 200)">
+    <rect width="430" height="210" rx="6" fill="#111" />
+    <path d="M 30 180 Q 90 40 180 90 T 320 60 T 400 180 Z" fill="url(#depthHeatmap)" opacity="0.85" />
+    <path d="M 60 180 Q 140 70 240 120 T 370 180 Z" fill="#ff4d00" opacity="0.6" />
+    <circle cx="210" cy="110" r="35" fill="#06b6d4" opacity="0.7"/>
+    <circle cx="310" cy="85" r="22" fill="#3b82f6" opacity="0.8"/>
+    <text x="20" y="30" fill="#e9e6df" font-family="'Courier New', monospace" font-size="11">POINT DISPARITY FIELD [Z-DEPTH: 0.2m - 18.5m]</text>
+  </g>
+
+  <rect x="700" y="440" width="430" height="110" rx="6" fill="#16150f" />
+  <text x="720" y="475" fill="#99958a" font-family="'Courier New', monospace" font-size="11">MODEL EVALUATION REPORT</text>
+  <text x="720" y="515" fill="#ff4d00" font-family="sans-serif" font-size="28" font-weight="800">+1.8 dB</text>
+  <text x="720" y="535" fill="#99958a" font-family="sans-serif" font-size="11">PSNR Improvement</text>
+
+  <text x="890" y="515" fill="#22c55e" font-family="sans-serif" font-size="28" font-weight="800">+0.06</text>
+  <text x="890" y="535" fill="#99958a" font-family="sans-serif" font-size="11">SSIM Structural Score</text>
+
+  <text x="1030" y="515" fill="#38bdf8" font-family="sans-serif" font-size="28" font-weight="800">-38%</text>
+  <text x="1030" y="535" fill="#99958a" font-family="sans-serif" font-size="11">VRAM Footprint</text>
+
+  <!-- Bottom Strip -->
+  <rect x="40" y="610" width="1120" height="90" rx="8" fill="#1d1926" stroke="rgba(255,255,255,0.06)" />
+  <text x="70" y="660" fill="#e9e6df" font-family="sans-serif" font-size="14" font-weight="600">PyTorch Implementation: Custom CUDA Kernels · Swin-T Encoder · Light-Field Disparity Loss</text>
+  <text x="1060" y="660" fill="#ff4d00" font-family="'Courier New', monospace" font-size="12" text-anchor="end">GITHUB REPO AVAILABLE ↗</text>
+</svg>
